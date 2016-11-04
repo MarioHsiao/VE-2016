@@ -45,8 +45,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSExplorer", "VSExplorer\VS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUNIT", "NUNIT", "{F1582F6F-CEE1-43B5-8534-E91FBCF50250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-syntax", "NUNIT\syntax\cs-syntax.csproj", "{06F46FA2-687B-4B46-A912-C1B0B4CC1B20}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.uikit", "NUNIT\nunit.uikit\nunit.uikit.csproj", "{353BC38A-FFB9-4CAC-A542-AFBF016D2629}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-gui", "NUNIT\nunit-gui\nunit-gui.csproj", "{9E15166C-D2B7-4B24-AB1C-1C69FFCEC9D3}"
