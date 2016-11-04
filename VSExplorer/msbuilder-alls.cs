@@ -98,8 +98,8 @@ namespace WinExplorer
 
         private void eventSource_MessageRaised(object sender, Microsoft.Build.Framework.BuildMessageEventArgs e)
         {
-            if (e.LineNumber != 0)
-                Me.Add(e);
+			//if (e.LineNumber != 0)
+              //  Me.Add(e);
         }
 
         private void eventSource_ProjectFinished(object sender, ProjectFinishedEventArgs e)
@@ -838,17 +838,29 @@ namespace WinExplorer
 
         static public VSSolution LoadProjects(VSProvider.ISolution s, string path)
         {
+			File.AppendAllText ("logger.txt", "\nREREAD ... " + s.Projects.Count());
+
             string folder = Path.GetDirectoryName(path);
+
+			File.AppendAllText ("logger.txt", "\nREREAD ... folder " + folder);
 
             VSSolution vs = new VSSolution();
 
+			File.AppendAllText ("logger.txt", "\nREREAD ... vs ");
+
             vs.solutionFileName = path;
 
+			File.AppendAllText ("logger.txt", "\nREREAD ... path ");
+
             List<VSProject> list = new List<VSProject>();
+
+			File.AppendAllText ("logger.txt", "\nREREAD ... list ");
 
             foreach (VSProvider.Project b in s.Projects)
             {
                 //string g = Path.GetFullPath(ps.FileName).Replace(Path.GetFileName(ps.FileName), "");
+
+				File.AppendAllText ("logger.txt", "\nbefore ... ");
 
                 VSProject v = new VSProject();
 
@@ -859,9 +871,13 @@ namespace WinExplorer
                 list.Add(v);
 
                 LoadProjectItems(v, v.FileName);
+
+				File.AppendAllText ("logger.txt", "\nafter ... ");
             }
 
             vs.Projects = (IEnumerable<VSProject>)list;
+
+			File.AppendAllText ("logger.txt", "\nVS count " + vs.Projects.Count());
 
             return vs;
         }
@@ -880,6 +896,7 @@ namespace WinExplorer
 
         public VSSolution tester(TreeView tv, string paths, string thisproject)
         {
+			File.AppendAllText ("logger.txt", "\ntester start ... ");
             PL = new ArrayList();
 
             PD = new ArrayList();
@@ -890,18 +907,22 @@ namespace WinExplorer
 
             VSProvider.VSSolution vs = null;
 
-            var solution = VSProvider.SolutionParser.Parse(paths);
+			File.AppendAllText ("logger.txt", "\nparse ... " + path);
+            var solution = VSProvider.SolutionParser.Parse(path);
 
             projects = 0;
 
             try
             {
-                vs = new VSSolution(Path.GetFullPath(path));
+				File.AppendAllText ("logger.txt", "\nvs ... ");
+                vs = new VSSolution(Path.GetFullPath(paths));
+				File.AppendAllText ("logger.txt", "\nvs ended ... ");
             }
-            catch (Exception e) { }
+			catch (Exception e) {File.AppendAllText ("logger.txt", "\nvs error ... "); }
 
             if (vs == null)
             {
+				File.AppendAllText ("logger.txt", "\nparser REREAD ... ");
                 vs = LoadProjects(solution, path);
             }
 
@@ -923,11 +944,12 @@ namespace WinExplorer
                 }
             }
             catch (Exception e) { };
-
+			File.AppendAllText ("logger.txt", "\nProjects started to read ... ");
             foreach (VSProject ps in vs.Projects)
             {
                 ArrayList NL = new ArrayList();
 
+				File.AppendAllText ("logger.txt", "\nproject read ... ");
 
                 if (thisproject != "")
                     if (thisproject != ps.FileName)

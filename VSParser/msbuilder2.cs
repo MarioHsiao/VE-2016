@@ -290,46 +290,38 @@ namespace VSProvider
             return "";
         }
 
-        public VSProject(VSSolution solution, object internalSolutionProject)
+		public VSProject(VSSolution solution, Microsoft.Build.BuildEngine.Project project)
         {
-            this.Name = s_ProjectInSolution_ProjectName.GetValue(internalSolutionProject, null) as string;
-            this.ProjectType = s_ProjectInSolution_ProjectType.GetValue(internalSolutionProject, null).ToString();
-            this.RelativePath = s_ProjectInSolution_RelativePath.GetValue(internalSolutionProject, null) as string;
-            this.ProjectGuid = s_ProjectInSolution_ProjectGuid.GetValue(internalSolutionProject, null) as string;
+		//	this.Name = Path.GetFileNameWithoutExtension(project.FullFileName) as string;
+        //    this.ProjectType = s_ProjectInSolution_ProjectType.GetValue(internalSolutionProject, null).ToString();
+        //    this.RelativePath = project.s_ProjectInSolution_RelativePath.GetValue(internalSolutionProject, null) as string;
+        //    this.ProjectGuid = project..s_ProjectInSolution_ProjectGuid.GetValue(internalSolutionProject, null) as string;
 
 
-            _internalSolutionProject = internalSolutionProject;
+          //  _internalSolutionProject = internalSolutionProject;
 
-            _projectFileName = Path.Combine(solution.SolutionPath, this.RelativePath);
+            //_projectFileName = Path.Combine(solution.SolutionPath, this.RelativePath);
 
-            _items = new List<VSProjectItem>();
+        //    _items = new List<VSProjectItem>();
 
-            if (this.ProjectType == "KnownToBeMSBuildFormat")
+            //if (this.ProjectType == "KnownToBeMSBuildFormat")
             {
-                this.Parse();
+        //        this.Parse(project);
             }
         }
 
-        private void Parse()
+		private void Parse(Microsoft.Build.BuildEngine.Project project)
         {
-            try
-            {
-                var stream = File.OpenRead(_projectFileName);
-                var reader = XmlReader.Create(stream);
-                var cache = s_ProjectRootElementCache.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { true });
-                ConstructorInfo[] inf = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic);
-                var rootElement = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { reader, cache, true });
+            //try
+            //{
+               
 
-                stream.Close();
-
-                var collection = (ICollection)s_ProjectRootElement_Items.GetValue(rootElement, null);
-
-                foreach (var item in collection)
+				foreach (var item in project.EvaluatedItems)
                 {
                     _items.Add(new VSProjectItem(this, item));
                 }
-                this.properties = s_ProjectRootElement_OutputType.GetValue(rootElement, null) as ICollection<ProjectPropertyElement>;
-
+                //this.properties = s_ProjectRootElement_OutputType.GetValue(rootElement, null) as ICollection<ProjectPropertyElement>;
+				/*
 
 
                 string outtype = Find("OutputType");
@@ -348,9 +340,51 @@ namespace VSProvider
             {
                 Error = e.Message;
             }
+            */
         }
 
-        public string Error { get; set; }
+		private void Parser()
+		{
+			try
+			{
+				var stream = File.OpenRead(_projectFileName);
+				var reader = XmlReader.Create(stream);
+				var cache = s_ProjectRootElementCache.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { true });
+				ConstructorInfo[] inf = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic);
+				var rootElement = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { reader, cache, true });
+
+				stream.Close();
+
+				var collection = (ICollection)s_ProjectRootElement_Items.GetValue(rootElement, null);
+
+				foreach (var item in collection)
+				{
+					_items.Add(new VSProjectItem(this, item));
+				}
+				this.properties = s_ProjectRootElement_OutputType.GetValue(rootElement, null) as ICollection<ProjectPropertyElement>;
+
+
+
+				string outtype = Find("OutputType");
+				string assembly = Find("AssemblyName");
+				IsPortable = Find("IsPortable");
+				if (IsPortable != null)
+				if (IsPortable == "true")
+					MessageBox.Show("portable");
+				OutputName = assembly + ".exe";
+				if (outtype == "Library")
+					OutputName = assembly + ".dll";
+
+				properties = null;
+			}
+			catch (Exception e)
+			{
+				Error = e.Message;
+			}
+		}
+
+
+		public string Error { get; set; }
 
         public IEnumerable<VSProjectItem> EDMXModels
         {

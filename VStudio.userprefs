@@ -1,0 +1,30 @@
+﻿<Properties StartupItem="VSExplorer/VSExplorer.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VSExplorer/UI/AssemblyTreeNode/ReflectorHostEnvironment.cs">
+    <Files>
+      <File FileName="VSExplorer/msbuilder-alls.cs" Line="1" Column="1" />
+      <File FileName="VSExplorer/ExplorerForms.cs" Line="1" Column="1" />
+      <File FileName="VSExplorer/ExplorerObject.cs" Line="1" Column="1" />
+      <File FileName="VSParser/msbuilder.cs" Line="1" Column="1" />
+      <File FileName="VSParser/msbuilder2.cs" Line="316" Column="16" />
+      <File FileName="VSExplorer/ClipboardForm.cs" Line="8" Column="7" />
+      <File FileName="VSExplorer/Environment/OutputForm.cs" Line="1" Column="7" />
+      <File FileName="VSExplorer/UI/AssemblyTreeNode/ReflectorHostEnvironment.cs" Line="44" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSParser/msbuilder.cs" line="35" column="1" />
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSParser/msbuilder.cs" line="45" column="1" />
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSParser/msbuilder.cs" line="45" column="75" />
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSParser/msbuilder.cs" line="62" column="1" />
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSExplorer/msbuilder-alls.cs" line="911" column="1" />
+      <Breakpoint file="/home/user/Downloads/VE-2016-master/VSParser/msbuilder.cs" line="154" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>PowerShell/Commandlets/Commandlets.csproj</String>
+    <String>NUNIT/syntax/cs-syntax.csproj</String>
+  </DisabledProjects>
+</Properties>

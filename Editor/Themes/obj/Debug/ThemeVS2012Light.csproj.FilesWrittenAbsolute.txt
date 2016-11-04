@@ -1,0 +1,9 @@
+/home/user/Downloads/VE-2016-master/Editor/Themes/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/user/Downloads/VE-2016-master/Editor/Themes/obj/Debug/WeifenLuo.WinFormsUI.ThemeVS2012Light.Resources.resources
+/home/user/Downloads/VE-2016-master/Editor/Themes/obj/Debug/WeifenLuo.WinFormsUI.ThemeVS2012Light.Strings.resources
+/home/user/Downloads/VE-2016-master/Editor/Themes/bin/Debug/WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll.mdb
+/home/user/Downloads/VE-2016-master/Editor/Themes/bin/Debug/WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
+/home/user/Downloads/VE-2016-master/Editor/Themes/obj/Debug/WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
+/home/user/Downloads/VE-2016-master/Editor/Themes/obj/Debug/WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll.mdb
+/home/user/Downloads/VE-2016-master/Editor/Themes/bin/Debug/WeifenLuo.WinFormsUI.Docking.dll
+/home/user/Downloads/VE-2016-master/Editor/Themes/bin/Debug/WeifenLuo.WinFormsUI.Docking.dll.mdb

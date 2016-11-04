@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,14 +7,12 @@
     </Configuration>
     <Platform Condition=" '$(Platform)' == '' ">
     </Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8F760944-16E1-404E-8353-288E38B9A19D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinExplorer</RootNamespace>
     <AssemblyName>WinExplorer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -41,29 +39,23 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <Configuration>Debug</Configuration>
-    <Platform>AnyCPU</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <DefineConstants />
     <Prefer32bit>true</Prefer32bit>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Optimize>false</Optimize>
-    <WarningLevel />
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -71,13 +63,10 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\WinExplorer.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>x86</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>image.ico</ApplicationIcon>
@@ -88,63 +77,18 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>5282C77035188F0544204E779C3587A1D0FE131C</ManifestCertificateThumbprint>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.dll</HintPath>
+    <Reference Include="Microsoft.Build">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ICSharpCode.NRefactory.Cecil">
-      <HintPath>dlls\ICSharpCode.NRefactory.Cecil.dll</HintPath>
+    <Reference Include="Microsoft.Build.Engine">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ICSharpCode.NRefactory.CSharp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    <Reference Include="Microsoft.Build.Framework">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.Build.Engine" />
-    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
-    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit-agent-x86, Version=3.0.5813.39036, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit-agent-x86.exe</HintPath>
-    </Reference>
-    <Reference Include="nunit.engine, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.engine.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.engine.api, Version=3.0.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.engine.api.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Management.Automation" />
     <Reference Include="StyleCop">
       <HintPath>..\packages\Extensions\StyleCop.dll</HintPath>
     </Reference>
@@ -154,6 +98,39 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.CSharp">
+      <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit-agent-x86">
+      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit-agent-x86.exe</HintPath>
+    </Reference>
+    <Reference Include="nunit.engine">
+      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.engine.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.engine.api">
+      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.engine.api.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutApplicationForm.cs">
@@ -466,7 +443,6 @@
     <Compile Include="UI\PSForm.Designer.cs">
       <DependentUpon>PSForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\PSHost.cs" />
     <Compile Include="UI\SemanticTreeDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +498,7 @@
       <DependentUpon>VSExplorerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CommandForm.cs" />
+    <Compile Include="UI\PSHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutApplicationForm.resx">
@@ -710,6 +687,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\ExplorerIcon.ico" />
+    <None Include="Resources\refresh.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OpenFolder.bmp" />
@@ -1860,76 +1838,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Resources_refs\ViewByNamespace.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DockProjects\DockProjects.csproj">
-      <Project>{103edc9b-ffa0-4752-a905-fcc7a0724213}</Project>
-      <Name>DockProjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\CodeEditor\CodeEditor.csproj">
-      <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>
-      <Name>CodeEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\Script Editor\Script Control\Project\ScriptControl.csproj">
-      <Project>{9dcfa218-4e5f-4106-b14c-cab7c0705ad0}</Project>
-      <Name>ScriptControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
-      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
-      <Name>CodeEditor.SyntaxDocument</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\SyntaxFiles\CodeEditor.SyntaxFiles.csproj">
-      <Project>{3814f627-858a-42a3-9aaf-cd649413f2a8}</Project>
-      <Name>CodeEditor.SyntaxFiles</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012Light</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\Themes\ThemeVS2013Blue.csproj">
-      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013Blue</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\WinFormsUI\WinFormsUI.csproj">
-      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
-      <Name>WinFormsUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Formatters\Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj">
-      <Project>{d535641f-a2d7-481c-930d-96c02f052b95}</Project>
-      <Name>Microsoft.DotNet.CodeFormatting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MSBuild\TCPLogger\Loggers.csproj">
-      <Project>{0da0a71d-59a3-446e-a28b-63ef0ae70ebe}</Project>
-      <Name>Loggers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET\GACManagerApi\GACManagerApi.csproj">
-      <Project>{2909743e-72ff-48bf-a081-e61a73d2e6ec}</Project>
-      <Name>GACManagerApi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET\GACProject\GACProject.csproj">
-      <Project>{5df52008-1897-488c-8aff-c764447de35c}</Project>
-      <Name>GACProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET\MetadataHelper\MetadataHelper.csproj">
-      <Project>{4a34a3c5-6176-49d7-a4c5-b2b671247f8f}</Project>
-      <Name>MetadataHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET\MetadataModel\MetadataModel.csproj">
-      <Project>{33cab640-0d03-43df-81bd-22cdc6c0a597}</Project>
-      <Name>MetadataModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET\PeReader\PeReader.csproj">
-      <Project>{34b9a0ce-df18-4cbc-8f7a-90c2b74338d5}</Project>
-      <Name>PeReader</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NUNIT\nunit-gui\nunit-gui.csproj">
-      <Project>{9e15166c-d2b7-4b24-ab1c-1c69ffcec9d3}</Project>
-      <Name>nunit-gui</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -4600,7 +4508,6 @@
     <None Include="Resources\structureinternalimage.bmp" />
     <None Include="Resources\structureimage.bmp" />
     <None Include="Resources\saveworkspace.bmp" />
-    <None Include="Resources\refresh.bmp" />
     <None Include="Resources\reflector.ico" />
     <None Include="Resources\propertyprotectedimage.bmp" />
     <None Include="Resources\propertyprivateimage.bmp" />
@@ -5507,8 +5414,79 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets'))" />
   </Target>
-  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\VSParser\VSParsers.csproj">
+      <Project>{91FEF9D7-5376-4EA4-BE09-CFB0EBB083FD}</Project>
+      <Name>VSParsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\Themes\ThemeVS2013Blue.csproj">
+      <Project>{245E07F6-10D5-4CFA-B003-0DEB06B223DA}</Project>
+      <Name>ThemeVS2013Blue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\Themes\ThemeVS2012Light.csproj">
+      <Project>{4ED4FDB5-9FD0-49E6-876D-1635F727C755}</Project>
+      <Name>ThemeVS2012Light</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\Script Editor\Script Control\Project\ScriptControl.csproj">
+      <Project>{9DCFA218-4E5F-4106-B14C-CAB7C0705AD0}</Project>
+      <Name>ScriptControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NUNIT\nunit-gui\nunit-gui.csproj">
+      <Project>{9E15166C-D2B7-4B24-AB1C-1C69FFCEC9D3}</Project>
+      <Name>nunit-gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Formatters\Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj">
+      <Project>{D535641F-A2D7-481C-930D-96C02F052B95}</Project>
+      <Name>Microsoft.DotNet.CodeFormatting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET\MetadataModel\MetadataModel.csproj">
+      <Project>{33CAB640-0D03-43DF-81BD-22CDC6C0A597}</Project>
+      <Name>MetadataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET\MetadataHelper\MetadataHelper.csproj">
+      <Project>{4A34A3C5-6176-49D7-A4C5-B2B671247F8F}</Project>
+      <Name>MetadataHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSBuild\TCPLogger\Loggers.csproj">
+      <Project>{0DA0A71D-59A3-446E-A28B-63EF0AE70EBE}</Project>
+      <Name>Loggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET\GACProject\GACProject.csproj">
+      <Project>{5DF52008-1897-488C-8AFF-C764447DE35C}</Project>
+      <Name>GACProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET\GACManagerApi\GACManagerApi.csproj">
+      <Project>{2909743E-72FF-48BF-A081-E61A73D2E6EC}</Project>
+      <Name>GACManagerApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\WinForms\Docking\Project\Forms.Docking.csproj">
+      <Project>{D3C782BA-178E-4235-A3BA-8C11DEBB6BEE}</Project>
+      <Name>Forms.Docking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DockProjects\DockProjects.csproj">
+      <Project>{103EDC9B-FFA0-4752-A905-FCC7A0724213}</Project>
+      <Name>DockProjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\SyntaxFiles\CodeEditor.SyntaxFiles.csproj">
+      <Project>{3814F627-858A-42A3-9AAF-CD649413F2A8}</Project>
+      <Name>CodeEditor.SyntaxFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
+      <Project>{3F43BAB0-22B4-4FD6-9655-8BA214A093A5}</Project>
+      <Name>CodeEditor.SyntaxDocument</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\CodeEditor\CodeEditor.csproj">
+      <Project>{94BFA44A-F4D0-4605-88E6-3ADD498F5E16}</Project>
+      <Name>CodeEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET\PeReader\PeReader.csproj">
+      <Project>{34B9A0CE-DF18-4CBC-8F7A-90C2B74338D5}</Project>
+      <Name>PeReader</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

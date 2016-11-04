@@ -1,0 +1,11 @@
+/home/user/Downloads/VE-2016-master/NET/PeReader/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/user/Downloads/VE-2016-master/NET/PeReader/obj/Debug/Microsoft.Cci.PeReaderErrorMessages.resources
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.PeReader.dll.mdb
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.PeReader.dll
+/home/user/Downloads/VE-2016-master/NET/PeReader/obj/Debug/Microsoft.Cci.PeReader.dll
+/home/user/Downloads/VE-2016-master/NET/PeReader/obj/Debug/Microsoft.Cci.PeReader.dll.mdb
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.MetadataHelper.dll
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.MetadataHelper.dll.mdb
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.MetadataModel.dll
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.MetadataModel.dll.mdb
+/home/user/Downloads/VE-2016-master/NET/PeReader/bin/Debug/Microsoft.Cci.MetadataModel.xml

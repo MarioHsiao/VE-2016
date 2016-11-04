@@ -1,1 +1,1 @@
-C:\MSBuildProjects-new\VStudio.sln
+/home/user/Downloads/VE-2016-master/VStudio.sln

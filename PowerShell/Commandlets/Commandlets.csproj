@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Commandlets</RootNamespace>
     <AssemblyName>Commandlets</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="elmah">
-      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\elmah.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -52,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\VSExplorer\VSExplorer.csproj">
-      <Project>{8f760944-16e1-404e-8353-288e38b9a19d}</Project>
+      <Project>{8F760944-16E1-404E-8353-288E38B9A19D}</Project>
       <Name>VSExplorer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
+      <Project>{91FEF9D7-5376-4EA4-BE09-CFB0EBB083FD}</Project>
       <Name>VSParsers</Name>
     </ProjectReference>
   </ItemGroup>

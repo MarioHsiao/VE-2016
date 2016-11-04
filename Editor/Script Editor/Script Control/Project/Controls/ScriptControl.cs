@@ -107,12 +107,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             {
                 if (value == ScriptLanguage.CSharp)
                 {
-                    tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
+                    //tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
                     tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
                 }
                 else
                 {
-                    tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
+                    //tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
                     tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
                 }
                 ConvertToLanguage(_scriptLanguage, value);
@@ -402,6 +402,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.dockContainer1.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
             this.dockContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
 
+			this.CreateControl ();
 
             string Theme = GetTheme();
 

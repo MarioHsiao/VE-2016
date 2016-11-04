@@ -34,7 +34,7 @@ namespace WinExplorer
 
         private ConsoleControls controls { get; set; }
 
-        private PSListenerConsoleSample c { get; set; }
+        //private PSListenerConsoleSample c { get; set; }
 
         public void StartPS()
         {
@@ -47,10 +47,10 @@ namespace WinExplorer
 
         public void start()
         {
-            c = new PSListenerConsoleSample(controls);
+            //c = new PSListenerConsoleSample(controls);
 
-            c.start("get-command > a.txt");
-        }
+            //c.start("get-command > a.txt"); 
+		}
 
         public void Process(IAsyncResult ar)
         {

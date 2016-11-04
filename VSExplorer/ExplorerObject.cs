@@ -26,14 +26,14 @@ namespace WinExplorer
 {
     public class TreeViews : System.Windows.Forms.TreeView
     {
-        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
-        private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
-                                                string pszSubIdList);
+    //    [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
+    //    private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
+    //                                           string pszSubIdList);
 
         protected override void CreateHandle()
         {
             base.CreateHandle();
-            SetWindowTheme(this.Handle, "explorer", null);
+      //      SetWindowTheme(this.Handle, "explorer", null);
         }
 
         public ContextMenuStrip context1 { get; set; }
@@ -856,9 +856,36 @@ namespace WinExplorer
 
             ArrayList V = new ArrayList();
 
-            Assembly assem = Assembly.LoadFile(ase);
+			ase = ase.Replace ("\\", "/");
+
+		//	if (File.Exists ("logger.txt") == false) {
+		
+		//	}
+
+	//		File.AppendAllText ("logger.txt", "Loading ase " + ase);
+
+
+			Assembly assem = null;
+
+
+			try{
+				assem = Assembly.LoadFile(ase);
+			}
+			catch(Exception e){
+
+				File.AppendAllText ("logger.txt", "Loading ase error " + e.Message.ToString());
+			}
 
             string[] rs = assem.GetManifestResourceNames();
+
+
+
+
+			string c = "";
+			foreach (string v in rs)
+				c += "\n" + v;
+
+	//		File.AppendAllText ("logger.txt", c);
 
             Stream r = assem.GetManifestResourceStream(res/*"WinExplorer.resources-vs.resources"*/);
 
@@ -868,6 +895,8 @@ namespace WinExplorer
 
             foreach (var item in mg)
             {
+	//			Console.WriteLine (((System.Collections.DictionaryEntry)(item)).Key.ToString());
+
                 dicAttributes.Add(((System.Collections.DictionaryEntry)(item)).Key.ToString(), ((System.Collections.DictionaryEntry)(item)).Value);
 
                 L.Add(((System.Collections.DictionaryEntry)(item)).Key.ToString());
@@ -3089,7 +3118,11 @@ namespace WinExplorer
 
             load_tree_view(recent);
 
+
+
             TreeView tv = (TreeView)LoadProject(recent);
+
+		//	MessageBox.Show ("Solution loading started...");
 
             VSSolution vs = tv.Tag as VSSolution;
 
@@ -3281,6 +3314,8 @@ namespace WinExplorer
 
         static public ImageList CreateImageList(string s)
         {
+			File.AppendAllText ("logger.txt", "\nCreate image list ... ");
+
             Dictionary<string, object> dict;
 
             Dictionary<string, object> dict2;
@@ -3292,8 +3327,14 @@ namespace WinExplorer
             dict = null;
             if (dict == null)
             {
-                dict = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.resources-vs.resources");
+				try{
+				dict = Load(s + "/" + "WinExplorer.exe", "WinExplorer.resources-vs.resources");
+				}
+				catch(Exception e){
+				}
 
+				
+				if(dict != null)
                 foreach (string str in dict.Keys)
                 {
                     if (dict[str].GetType() == typeof(Bitmap))
@@ -3305,8 +3346,12 @@ namespace WinExplorer
             dict2 = null;
             if (dict2 == null)
             {
+				try{
                 dict2 = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.resource-vsc.resources");
-
+				}
+				catch(Exception e){
+				}
+				if(dict2 != null)
                 foreach (string str in dict2.Keys)
                 {
                     if (dict2[str].GetType() == typeof(Bitmap))
@@ -3317,15 +3362,19 @@ namespace WinExplorer
             dict3 = null;
             if (dict3 == null)
             {
+				try{
                 dict3 = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.Resources_refs.resources");
-
+				}
+				catch(Exception e){
+				}
+				if(dict3 != null)
                 foreach (string str in dict3.Keys)
                 {
                     if (dict3[str].GetType() == typeof(Bitmap))
 
                         addImage((Bitmap)dict3[str], str, imageList1);
                 }
-
+				File.AppendAllText ("logger.txt", "\nCreate image list before add ... ");
                 addImage(resource_alls.Folder, "Folder", imageList1);
                 addImage(resource_alls.FolderOpen, "FolderOpen", imageList1);
 
@@ -3378,6 +3427,7 @@ namespace WinExplorer
                 imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureInternalImage, resource_vsc.Structure_8338_24);
                 imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructurePrivateImage, resource_vsc.Structure_Private_512_24);
                 imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureProtectedImage, resource_vsc.Structure_Protected_511_24);
+				File.AppendAllText ("logger.txt", "Loading images ended ");
             }
 
             return imageList1;
@@ -3392,11 +3442,15 @@ namespace WinExplorer
 
         public TreeView LoadProject(string sln)
         {
+			File.AppendAllText ("logger.txt", "\nLoad project ... ");
+
             string s = AppDomain.CurrentDomain.BaseDirectory;
 
             string file = sln;
 
             imageList1 = CreateImageList(s);
+
+			File.AppendAllText ("logger.txt", "\nLoad cd ... ");
 
             string b = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -3408,16 +3462,31 @@ namespace WinExplorer
 
             msv.ImageList = imageList1;
 
+			File.AppendAllText ("logger.txt", "\nLoad ms ... ");
 
             ms = new msbuilder_alls();
 
-            string p = Path.GetDirectoryName(file);
+			File.AppendAllText ("logger.txt", "\nLoaded ms ... ");
 
-            Directory.SetCurrentDirectory(p);
+            string p = Path.GetDirectoryName(file) + "/";
+
+			File.AppendAllText ("logger.txt", "\nDir name ... " + p);
+
+			//p = Path.GetFullPath (file).Replace("/" + file, "");
+
+			File.AppendAllText ("logger.txt", "\nSet cd ... " + p);
+
+            //Directory.SetCurrentDirectory(p);
+
+			File.AppendAllText ("logger.txt", "\nGet fn ... ");
 
             string g = Path.GetFileName(file);
 
+			File.AppendAllText ("logger.txt", "\nLoad vs dict ... ");
+
             loads_vs_dict();
+
+			File.AppendAllText ("logger.txt", "\nLoaded vs dict ... ");
 
             ms.dc = dc;
 
@@ -3425,7 +3494,13 @@ namespace WinExplorer
 
             VSParsers.CSParsers.df = new Dictionary<string, ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile>();
 
-            VSSolution vs = ms.tester(msv, g, "");
+			//MessageBox.Show ("Solution is read ...");
+
+			File.AppendAllText ("logger.txt", "\nSolution Load will start ... ");
+
+            VSSolution vs = ms.tester(msv, file, "");
+
+			File.AppendAllText ("logger.txt", "\nSolution Load ended ... ");
 
             slnpath = s;
 
@@ -3688,8 +3763,9 @@ namespace WinExplorer
 
         static public Dictionary<string, string> GetDC()
         {
+		//	File.AppendAllText ("logger.txt", "GetDC started... ");
             Dictionary<string, string> d = new Dictionary<string, string>();
-
+			try{
             d.Add(".vcproj", "CPPProject_SolutionExplorerNode_24");
             d.Add(".vcxproj", "CPPProject_SolutionExplorerNode_24");
             d.Add(".csproj", "CSharpProject_SolutionExplorerNode_24");
@@ -3726,7 +3802,9 @@ namespace WinExplorer
             d.Add(".datasource", "datasource");
             d.Add(".cs", "CSharpFile_SolutionExplorerNode");
             d.Add(".vb", "vb");
-
+			}
+			catch(Exception e){
+			}
             //d.Add("ASSEMBLY", "ASSEMBLY");
             //d.Add("CLASS", "CLASS");
             //d.Add("CLASS_FRIEND", "CLASS_FRIEND");
@@ -3794,6 +3872,7 @@ namespace WinExplorer
             //d.Add("VALUETYPE_PROTECTED", "VALUETYPE_PROTECTED");
             //d.Add("VALUETYPE_SEALED", "VALUETYPE_SEALED");
 
+		//	File.AppendAllText ("logger.txt", "GetDC ended... ");
             return d;
         }
 

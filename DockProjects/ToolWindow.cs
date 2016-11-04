@@ -28,6 +28,7 @@ namespace DockProject
         public ToolWindow()
         {
             InitializeComponent();
+			this.FormClosing += (object sender, System.Windows.Forms.FormClosingEventArgs e) => {e.Cancel = true;};
         }
 
         public string types { get; set; }

@@ -39,7 +39,7 @@ namespace VSProvider
 
         public VSProjectItem(VSProject project, object internalProjectItem)
         {
-            this.ItemType = s_ProjectItemElement_ItemType.GetValue(internalProjectItem, null) as string;
+ /*           this.ItemType = s_ProjectItemElement_ItemType.GetValue(internalProjectItem, null) as string;
             this.Include = s_ProjectItemElement_Include.GetValue(internalProjectItem, null) as string;
             this.project = project;
             _internalProjectItem = internalProjectItem;
@@ -52,6 +52,7 @@ namespace VSProvider
 
                 fileName = Path.Combine(file.DirectoryName, this.Include);
             }
+ */           
         }
 
         public string SubTypes { get; set; }

@@ -45,9 +45,9 @@ namespace WinExplorer
 
         #endregion Nested Classes
 
-        [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
-        private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
-                                                string pszSubIdList);
+        //[DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
+        //private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
+        //                                        string pszSubIdList);
 
         /// <summary>
         /// Create the explorer window form.
@@ -111,6 +111,17 @@ namespace WinExplorer
 
             scr = new ScriptControl();
 
+			if (scr.IsHandleCreated == false) {
+				scr.Visible = true;
+				scr.CreateControl ();
+				MethodInfo ch = scr.GetType().GetMethod("CreateHandle", BindingFlags.NonPublic | BindingFlags.Instance);
+				ch.Invoke(scr, new object[0]);
+			}
+
+			if (scr.IsHandleCreated == false)
+				MessageBox.Show ("No handle created");
+			//else MessageBox.Show ("Handle created");
+
             string Theme = scr.GetTheme();
 
             if (Theme == "VS2012Light")
@@ -123,12 +134,17 @@ namespace WinExplorer
             _deserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
 
             ImageList imgs = CreateView_Solution.CreateImageList();
-            VSProject.dc = CreateView_Solution.GetDC();
+
+            //VSProject.dc = CreateView_Solution.GetDC();
+
+			CreateView_Solution.GetDC();
+
 
             CodeEditorControl.AutoListImages = imgs;
 
-
+			//File.AppendAllText ("logger.txt", "\nLoad Document window started ... ");
             LoadDocumentWindow(false);
+			//File.AppendAllText ("logger.txt", "\nLoad Document window ended ... ");
 
             LoadSE("Explorer", false);
             solutionExplorerToolStripMenuItem.Checked = true;
@@ -930,6 +946,8 @@ namespace WinExplorer
         {
             ows = new ToolWindow();
 
+			ows.HideOnClose = false;
+
             ows.Text = name;
             ows.FormBorderStyle = FormBorderStyle.Sizable;
             ows.TabText = name;
@@ -940,7 +958,8 @@ namespace WinExplorer
                 ofm = new OutputForm();
                 ofm.TopLevel = false;
                 ofm.FormBorderStyle = FormBorderStyle.None;
-                ofm.Dock = DockStyle.Fill;
+
+				ofm.Dock = DockStyle.Fill;
                 ofm.Show();
             }
 
@@ -1284,7 +1303,14 @@ namespace WinExplorer
 
         private void Open_Click(object sender, EventArgs e)
         {
+
+			FileStream f = File.Create ("logger.txt");
+			f.Close ();
+			File.AppendAllText ("logger.txt", "Loading thread started ");
+
             string recent = forms.tb.Text;
+
+			recent = recent.Replace ("\\", "/");
 
             if (recent == "")
                 return;
@@ -1300,6 +1326,8 @@ namespace WinExplorer
             _sv._SolutionTreeView.Nodes.Clear();
 
             _sv.save_recent_solution(recent);
+
+
 
             workerFunctionDelegate w = workerFunction;
             w.BeginInvoke(recent, null, null);
@@ -2371,6 +2399,8 @@ namespace WinExplorer
         private void workerFunction(string recent)
         {
             this.BeginInvoke(new Action(() => { SolutionClose(); }));
+
+
 
             TreeView tv = _sv.load_recent_solution(recent);
 
@@ -4308,9 +4338,20 @@ namespace WinExplorer
 
         private void ExplorerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+			
             if (scr == null)
                 return;
-            scr.Invoke(new Action(() => { scr.SaveSolution(); }));
+
+			if(this.Visible == false) {
+
+
+				e.Cancel = true;
+
+				return;
+			}
+
+
+           // scr.Invoke(new Action(() => { scr.SaveSolution(); }));
 
             string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
             dock.SaveAsXml(configFile);

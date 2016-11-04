@@ -1,0 +1,10 @@
+/home/user/Downloads/VE-2016-master/NET/GACProject/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/user/Downloads/VE-2016-master/NET/GACProject/obj/Debug/GACProject.GACForm.resources
+/home/user/Downloads/VE-2016-master/NET/GACProject/obj/Debug/GACProject.Properties.Resources.resources
+/home/user/Downloads/VE-2016-master/NET/GACProject/bin/Debug/GACProject.exe.config
+/home/user/Downloads/VE-2016-master/NET/GACProject/bin/Debug/GACProject.exe.mdb
+/home/user/Downloads/VE-2016-master/NET/GACProject/bin/Debug/GACProject.exe
+/home/user/Downloads/VE-2016-master/NET/GACProject/obj/Debug/GACProject.exe
+/home/user/Downloads/VE-2016-master/NET/GACProject/obj/Debug/GACProject.exe.mdb
+/home/user/Downloads/VE-2016-master/NET/GACProject/bin/Debug/GACManagerApi.dll
+/home/user/Downloads/VE-2016-master/NET/GACProject/bin/Debug/GACManagerApi.dll.mdb

@@ -1,0 +1,6 @@
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/obj/Debug/NUnit.UiKit.Controls.TipWindow.resources
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/bin/Debug/nunit.uikit.dll.mdb
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/bin/Debug/nunit.uikit.dll
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/obj/Debug/nunit.uikit.dll
+/home/user/Downloads/VE-2016-master/NUNIT/nunit.uikit/obj/Debug/nunit.uikit.dll.mdb

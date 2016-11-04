@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4A34A3C5-6176-49D7-A4C5-B2B671247F8F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -22,7 +20,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -51,8 +49,6 @@
     <AssemblyOriginatorKeyFile>..\Common\InterimKey.snk</AssemblyOriginatorKeyFile>
     <DocumentationFile>bin\Debug\Microsoft.Cci.MetadataHelper.XML</DocumentationFile>
     <WarningsAsErrors>1591</WarningsAsErrors>
-    <NoWarn>
-    </NoWarn>
     <CodeAnalysisRules>
     </CodeAnalysisRules>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -69,7 +65,8 @@
     <AssemblyOriginatorKeyFile>..\Common\InterimKey.snk</AssemblyOriginatorKeyFile>
     <DocumentationFile>bin\Release\Microsoft.Cci.MetadataHelper.xml</DocumentationFile>
     <CodeAnalysisRuleSet>Migrated rules for MetadataHelper (2).ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules />
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NightlyDebug|AnyCPU' ">
@@ -83,8 +80,10 @@
     <DelaySign>true</DelaySign>
     <DocumentationFile>bin\NightlyDebug\Microsoft.Cci.MetadataHelper.xml</DocumentationFile>
     <CodeAnalysisRuleSet>Migrated rules for MetadataHelper (2).ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules />
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
     <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NightlyRelease|AnyCPU' ">
     <OutputPath>bin\NightlyRelease\</OutputPath>
@@ -96,8 +95,10 @@
     <DelaySign>true</DelaySign>
     <DocumentationFile>bin\NightlyRelease\Microsoft.Cci.MetadataHelper.xml</DocumentationFile>
     <CodeAnalysisRuleSet>Migrated rules for MetadataHelper (2).ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules />
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
     <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Common\Include\version.cs">

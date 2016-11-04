@@ -8,6 +8,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
+using Microsoft.Build.Construction;
+
 namespace VSProvider
 {
     public class VSSolution
@@ -28,14 +30,88 @@ namespace VSProvider
 
         static VSSolution()
         {
-            s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionParser, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
-            s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
-            s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
-            s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("ParseSolution", BindingFlags.NonPublic | BindingFlags.Instance);
+			File.AppendAllText ("logger.txt", "\nREREAD ... vsolution static ");
+
+			Assembly asm = Assembly.LoadFile ("Microsoft.Build.Engine.dll");
+
+			foreach (Type type in asm.GetTypes())
+			{
+				Console.WriteLine(type.FullName);
+			}
+
+           // s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionFile, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+
+
+			s_SolutionParser = asm.GetType ("Mono.XBuild.CommandLine.SolutionParser");
+
+
+
+
+
+			foreach (PropertyInfo p in s_SolutionParser.GetProperties())
+			{
+				Console.WriteLine(p.Name);
+			}
+			foreach (MethodInfo p in s_SolutionParser.GetMethods())
+			{
+				Console.WriteLine(p.Name);
+			}
+
+			//if (s_SolutionParser != null) {
+				
+				s_SolutionParser_solutionReader = s_SolutionParser.GetProperty ("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
+				s_SolutionParser_projects = s_SolutionParser.GetProperty ("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
+				//s_SolutionParser_parseSolution = s_SolutionParser.GetMethod ("ParseSolution", BindingFlags.NonPublic | BindingFlags.Instance);
+			s_SolutionParser_parseSolution = s_SolutionParser.GetMethod ("ParseSolution", BindingFlags.Public | BindingFlags.Instance);
+
+
+			var assembly = typeof(Microsoft.Build.Construction.ProjectElement).Assembly;
+			var projectInSolutionType = assembly.GetType("Microsoft.Build.Construction.ProjectInSolution");
+
+
+			//}
         }
+
+		private static MethodInfo GetAllProjectFileNamesMethod()
+		{
+			#pragma warning disable 618
+			var assembly = typeof(Microsoft.Build.BuildEngine.Engine).Assembly;
+			#pragma warning restore 618
+			var solutionParserType = assembly.GetType("Mono.XBuild.CommandLine.SolutionParser");
+			if (solutionParserType == null)
+			{
+				
+			}
+
+			var methodInfo = solutionParserType.GetMethod(
+				"GetAllProjectFileNames", 
+				new Type[] {typeof(string) });
+			if (methodInfo == null)
+			{
+				
+			}
+
+			return methodInfo;
+		}
+
+		/// <summary>
+		/// Returns the list of project files in the solution file.
+		/// </summary>
+		/// <param name="fileSystem">The fileSytem. Note that this parameter is ignored and 
+		/// has no effect.</param>
+		/// <param name="solutionFile">The name of the solution file.</param>
+		/// <returns>The list of project files in the solution file.</returns>
+		public IEnumerable<string> GetAllProjectFileNames(string solutionFile)
+		{
+			var getAllProjectFileNamesMethod = GetAllProjectFileNamesMethod();
+			var names = (IEnumerable<string>)getAllProjectFileNamesMethod.Invoke(
+				null, new object[] { solutionFile });
+			return names;
+		}
 
         public VSSolution()
         {
+			File.AppendAllText ("logger.txt", "\nREREAD ... vsolution ");
         }
 
         public VSProject GetProjectbyName(string name)
@@ -74,32 +150,31 @@ namespace VSProvider
 
         public VSSolution(string solutionFileName)
         {
-            if (s_SolutionParser == null)
-            {
-                throw new InvalidOperationException("Can not find type 'Microsoft.Build.Construction.SolutionParser' are you missing a assembly reference to 'Microsoft.Build.dll'?");
-            }
-
-            var solutionParser = s_SolutionParser.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(null);
-
-            var streamReader = new StreamReader(solutionFileName);
-            {
-                s_SolutionParser_solutionReader.SetValue(solutionParser, streamReader, null);
-                s_SolutionParser_parseSolution.Invoke(solutionParser, null);
-            }
-
+  
             this.solutionFileName = solutionFileName;
 
-            projects = new List<VSProject>();
-            var array = (Array)s_SolutionParser_projects.GetValue(solutionParser, null);
 
-            for (int i = 0; i < array.Length; i++)
+			IEnumerable<string> fs = (IEnumerable<string>)GetAllProjectFileNames (solutionFileName);
+
+            projects = new List<VSProject>();
+            //var array = (Array)s_SolutionParser_projects.GetValue(solutionParser, null);
+
+            foreach(string s in fs)
             {
-                projects.Add(new VSProject(this, array.GetValue(i)));
+
+				//Microsoft.Build.Evaluation.ProjectCollection.GlobalProjectCollection.UnloadAllProjects ();
+
+				Microsoft.Build.BuildEngine.Project pp = new Microsoft.Build.BuildEngine.Project ();
+
+				pp.Load (s);
+
+                VSProject vs = new VSProject(this, pp);
+
+
             }
 
-            streamReader.Close();
 
-            streamReader.Dispose();
+
         }
 
         public VSProject GetVSProject(string file)

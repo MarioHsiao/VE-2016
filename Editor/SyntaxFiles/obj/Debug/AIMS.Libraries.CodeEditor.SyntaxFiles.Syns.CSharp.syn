@@ -26,7 +26,7 @@
 				readonly ref return
 				sealed set sizeof static struct switch
 				this throw true try typeof
-				unchecked unsafe using 
+				unchecked unsafe using volatile
 				virtual
 				while
         partial
@@ -41,6 +41,11 @@
 			<PatternGroup Name="DataTypes" Style="CS Datatype" CaseSensitive="true">
 				<Patterns>
 	string exfloat float int long sbyte short uint ulong void double decimal bool char ushort
+				</Patterns>
+			</PatternGroup>
+    <PatternGroup Name="Methods" Style="CS Method" CaseSensitive="true">
+				<Patterns>
+	AboutDialog
 				</Patterns>
 			</PatternGroup>
 		</Keywords>
@@ -138,6 +143,7 @@
 	<Style Name="CS Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
 	<Style Name="CS String" ForeColor="SteelBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
 	<Style Name="CS Number" ForeColor="Teal" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="CS Method" ForeColor="LightBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
 	<Style Name="CS Operator" ForeColor="Black" BackColor="" Bold="false" Italic="false" Underline="false" />
 	<Style Name="CS Keyword" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="false" />
 	<Style Name="CS Datatype" ForeColor="DarkBlue" BackColor="" Bold="false" Italic="false" Underline="false" />

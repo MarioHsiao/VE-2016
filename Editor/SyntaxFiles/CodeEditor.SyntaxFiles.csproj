@@ -1,19 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3814F627-858A-42A3-9AAF-CD649413F2A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AIMS.Libraries.CodeEditor.SyntaxFiles</RootNamespace>
     <AssemblyName>SyntaxFiles</AssemblyName>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -29,8 +25,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -96,19 +90,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeEditor\CodeEditor.csproj">
-      <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>
+      <Project>{94BFA44A-F4D0-4605-88E6-3ADD498F5E16}</Project>
       <Name>CodeEditor</Name>
     </ProjectReference>
     <ProjectReference Include="..\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
-      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
+      <Project>{3F43BAB0-22B4-4FD6-9655-8BA214A093A5}</Project>
       <Name>CodeEditor.SyntaxDocument</Name>
     </ProjectReference>
     <ProjectReference Include="..\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Project>{4ED4FDB5-9FD0-49E6-876D-1635F727C755}</Project>
       <Name>ThemeVS2012Light</Name>
     </ProjectReference>
     <ProjectReference Include="..\Themes\ThemeVS2013Blue.csproj">
-      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
+      <Project>{245E07F6-10D5-4CFA-B003-0DEB06B223DA}</Project>
       <Name>ThemeVS2013Blue</Name>
     </ProjectReference>
   </ItemGroup>

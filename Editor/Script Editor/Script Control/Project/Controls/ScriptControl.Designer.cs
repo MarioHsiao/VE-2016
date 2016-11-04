@@ -226,7 +226,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.tsbSelectLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cNetToolStripMenuItemCSharp,
             this.vBNetToolStripMenuItemVbNet});
-            this.tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
+            //this.tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
             this.tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSelectLanguage.Name = "tsbSelectLanguage";
             this.tsbSelectLanguage.Size = new System.Drawing.Size(29, 22);
@@ -234,7 +234,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // cNetToolStripMenuItemCSharp
             // 
-            this.cNetToolStripMenuItemCSharp.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
+            //this.cNetToolStripMenuItemCSharp.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
             this.cNetToolStripMenuItemCSharp.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.cNetToolStripMenuItemCSharp.Name = "cNetToolStripMenuItemCSharp";
             this.cNetToolStripMenuItemCSharp.Size = new System.Drawing.Size(114, 22);
@@ -245,7 +245,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // vBNetToolStripMenuItemVbNet
             // 
             this.vBNetToolStripMenuItemVbNet.BackColor = System.Drawing.Color.Transparent;
-            this.vBNetToolStripMenuItemVbNet.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
+            //this.vBNetToolStripMenuItemVbNet.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
             this.vBNetToolStripMenuItemVbNet.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.vBNetToolStripMenuItemVbNet.Name = "vBNetToolStripMenuItemVbNet";
             this.vBNetToolStripMenuItemVbNet.Size = new System.Drawing.Size(114, 22);
@@ -271,7 +271,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbNew
             // 
             this.tsbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNew.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewDocument;
+            //this.tsbNew.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewDocument;
             this.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNew.Name = "tsbNew";
             this.tsbNew.Size = new System.Drawing.Size(23, 22);
@@ -281,7 +281,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbSave
             // 
             this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSave.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Save;
+           // this.tsbSave.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Save;
             this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSave.Name = "tsbSave";
             this.tsbSave.Size = new System.Drawing.Size(23, 22);
@@ -296,7 +296,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbCut
             // 
             this.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
+            //this.tsbCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
             this.tsbCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCut.Name = "tsbCut";
             this.tsbCut.Size = new System.Drawing.Size(23, 22);
@@ -306,7 +306,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbCopy
             // 
             this.tsbCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
+            //this.tsbCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
             this.tsbCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCopy.Name = "tsbCopy";
             this.tsbCopy.Size = new System.Drawing.Size(23, 22);
@@ -316,7 +316,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbPaste
             // 
             this.tsbPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
+            //this.tsbPaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
             this.tsbPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPaste.Name = "tsbPaste";
             this.tsbPaste.Size = new System.Drawing.Size(23, 22);
@@ -331,7 +331,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbComment
             // 
             this.tsbComment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbComment.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.CodeComment;
+           // this.tsbComment.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.CodeComment;
             this.tsbComment.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbComment.Name = "tsbComment";
             this.tsbComment.Size = new System.Drawing.Size(23, 22);
@@ -341,7 +341,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbUnComment
             // 
             this.tsbUnComment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUnComment.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.CodeUnComment;
+            //this.tsbUnComment.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.CodeUnComment;
             this.tsbUnComment.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUnComment.Name = "tsbUnComment";
             this.tsbUnComment.Size = new System.Drawing.Size(23, 22);
@@ -356,7 +356,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbUndo
             // 
             this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUndo.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Edit_Undo;
+           // this.tsbUndo.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Edit_Undo;
             this.tsbUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUndo.Name = "tsbUndo";
             this.tsbUndo.Size = new System.Drawing.Size(23, 22);
@@ -366,7 +366,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbRedo
             // 
             this.tsbRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRedo.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Edit_Redo;
+           // this.tsbRedo.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Edit_Redo;
             this.tsbRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRedo.Name = "tsbRedo";
             this.tsbRedo.Size = new System.Drawing.Size(23, 22);
@@ -381,7 +381,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbBuild
             // 
             this.tsbBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbBuild.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Build;
+           // this.tsbBuild.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Build;
             this.tsbBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbBuild.Name = "tsbBuild";
             this.tsbBuild.Size = new System.Drawing.Size(23, 22);
@@ -391,7 +391,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbRun
             // 
             this.tsbRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRun.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Run;
+           // this.tsbRun.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Run;
             this.tsbRun.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRun.Name = "tsbRun";
             this.tsbRun.Size = new System.Drawing.Size(23, 22);
@@ -406,7 +406,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbToggleBookmark
             // 
             this.tsbToggleBookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbToggleBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkToggle;
+            //this.tsbToggleBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkToggle;
             this.tsbToggleBookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbToggleBookmark.Name = "tsbToggleBookmark";
             this.tsbToggleBookmark.Size = new System.Drawing.Size(23, 22);
@@ -416,7 +416,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbPreBookmark
             // 
             this.tsbPreBookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPreBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkPre;
+           // this.tsbPreBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkPre;
             this.tsbPreBookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPreBookmark.Name = "tsbPreBookmark";
             this.tsbPreBookmark.Size = new System.Drawing.Size(23, 22);
@@ -426,7 +426,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbNextBookmark
             // 
             this.tsbNextBookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNextBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkNext;
+           // this.tsbNextBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkNext;
             this.tsbNextBookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNextBookmark.Name = "tsbNextBookmark";
             this.tsbNextBookmark.Size = new System.Drawing.Size(23, 22);
@@ -436,7 +436,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbDelAllBookmark
             // 
             this.tsbDelAllBookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDelAllBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkDelete;
+           // this.tsbDelAllBookmark.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.BookMarkDelete;
             this.tsbDelAllBookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelAllBookmark.Name = "tsbDelAllBookmark";
             this.tsbDelAllBookmark.Size = new System.Drawing.Size(23, 22);
@@ -446,7 +446,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbDelallBreakPoints
             // 
             this.tsbDelallBreakPoints.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDelallBreakPoints.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.DelBreakpoints;
+           // this.tsbDelallBreakPoints.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.DelBreakpoints;
             this.tsbDelallBreakPoints.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelallBreakPoints.Name = "tsbDelallBreakPoints";
             this.tsbDelallBreakPoints.Size = new System.Drawing.Size(23, 22);
@@ -461,7 +461,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbFind
             // 
             this.tsbFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbFind.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Find;
+          //  this.tsbFind.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Find;
             this.tsbFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbFind.Name = "tsbFind";
             this.tsbFind.Size = new System.Drawing.Size(23, 22);
@@ -471,7 +471,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbReplace
             // 
             this.tsbReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReplace.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.FindNext;
+           // this.tsbReplace.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.FindNext;
             this.tsbReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReplace.Name = "tsbReplace";
             this.tsbReplace.Size = new System.Drawing.Size(23, 22);
@@ -486,7 +486,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbErrorList
             // 
             this.tsbErrorList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbErrorList.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Output;
+            //this.tsbErrorList.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Output;
             this.tsbErrorList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbErrorList.Name = "tsbErrorList";
             this.tsbErrorList.Size = new System.Drawing.Size(23, 22);
@@ -496,7 +496,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // tsbSolutionExplorer
             // 
             this.tsbSolutionExplorer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSolutionExplorer.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProjectExplorer;
+            //this.tsbSolutionExplorer.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProjectExplorer;
             this.tsbSolutionExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSolutionExplorer.Name = "tsbSolutionExplorer";
             this.tsbSolutionExplorer.Size = new System.Drawing.Size(23, 22);

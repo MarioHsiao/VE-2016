@@ -136,7 +136,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog
             // 
             _backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             _backButton.Enabled = false;
-            _backButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserBefore;
+            //_backButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserBefore;
             _backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _backButton.Name = "backButton";
             _backButton.Size = new System.Drawing.Size(23, 22);
@@ -147,7 +147,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog
             // 
             _forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             _forwardButton.Enabled = false;
-            _forwardButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserAfter;
+            //_forwardButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserAfter;
             _forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _forwardButton.Name = "forwardButton";
             _forwardButton.Size = new System.Drawing.Size(23, 22);
@@ -157,7 +157,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog
             // refreshButton
             // 
             _refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            _refreshButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserRefresh;
+           // _refreshButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserRefresh;
             _refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _refreshButton.Name = "refreshButton";
             _refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -168,7 +168,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog
             // 
             _stopButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             _stopButton.Enabled = false;
-            _stopButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserCancel;
+            //_stopButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_BrowserCancel;
             _stopButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _stopButton.Name = "stopButton";
             _stopButton.Size = new System.Drawing.Size(23, 22);
@@ -189,7 +189,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog
             // 
             // goButton
             // 
-            _goButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_RunProgramIcon;
+            //_goButton.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Icons_16x16_RunProgramIcon;
             _goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _goButton.Name = "goButton";
             _goButton.Size = new System.Drawing.Size(40, 22);

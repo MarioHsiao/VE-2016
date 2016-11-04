@@ -135,7 +135,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderNewItem
             // 
-            this.tFolderNewItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewItem;
+            //this.tFolderNewItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewItem;
             this.tFolderNewItem.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderNewItem.Name = "tFolderNewItem";
             this.tFolderNewItem.Size = new System.Drawing.Size(147, 22);
@@ -144,7 +144,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderExisting
             // 
-            this.tFolderExisting.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.ExistingItem;
+            //this.tFolderExisting.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.ExistingItem;
             this.tFolderExisting.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderExisting.Name = "tFolderExisting";
             this.tFolderExisting.Size = new System.Drawing.Size(147, 22);
@@ -153,7 +153,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderNewFolder
             // 
-            this.tFolderNewFolder.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewFolder;
+            //this.tFolderNewFolder.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewFolder;
             this.tFolderNewFolder.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderNewFolder.Name = "tFolderNewFolder";
             this.tFolderNewFolder.Size = new System.Drawing.Size(147, 22);
@@ -167,7 +167,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderCut
             // 
-            this.tFolderCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
+            //this.tFolderCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
             this.tFolderCut.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderCut.Name = "tFolderCut";
             this.tFolderCut.Size = new System.Drawing.Size(124, 22);
@@ -176,7 +176,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderCopy
             // 
-            this.tFolderCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
+            //this.tFolderCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
             this.tFolderCopy.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderCopy.Name = "tFolderCopy";
             this.tFolderCopy.Size = new System.Drawing.Size(124, 22);
@@ -185,7 +185,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderPaste
             // 
-            this.tFolderPaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
+           // this.tFolderPaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
             this.tFolderPaste.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderPaste.Name = "tFolderPaste";
             this.tFolderPaste.Size = new System.Drawing.Size(124, 22);
@@ -194,7 +194,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFolderDelete
             // 
-            this.tFolderDelete.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Delete;
+            //this.tFolderDelete.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Delete;
             this.tFolderDelete.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFolderDelete.Name = "tFolderDelete";
             this.tFolderDelete.Size = new System.Drawing.Size(124, 22);
@@ -230,7 +230,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tProjectBuild
             // 
-            this.tProjectBuild.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Build;
+            //this.tProjectBuild.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Build;
             this.tProjectBuild.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tProjectBuild.Name = "tProjectBuild";
             this.tProjectBuild.Size = new System.Drawing.Size(197, 22);
@@ -263,7 +263,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tProjectNewItem
             // 
-            this.tProjectNewItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewItem;
+            //this.tProjectNewItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewItem;
             this.tProjectNewItem.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tProjectNewItem.Name = "tProjectNewItem";
             this.tProjectNewItem.Size = new System.Drawing.Size(147, 22);
@@ -272,7 +272,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tProjectExistingItem
             // 
-            this.tProjectExistingItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.ExistingItem;
+            //this.tProjectExistingItem.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.ExistingItem;
             this.tProjectExistingItem.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tProjectExistingItem.Name = "tProjectExistingItem";
             this.tProjectExistingItem.Size = new System.Drawing.Size(147, 22);
@@ -281,7 +281,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tProjectNewFolder
             // 
-            this.tProjectNewFolder.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewFolder;
+            //this.tProjectNewFolder.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.NewFolder;
             this.tProjectNewFolder.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tProjectNewFolder.Name = "tProjectNewFolder";
             this.tProjectNewFolder.Size = new System.Drawing.Size(147, 22);
@@ -308,7 +308,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tProjectProp
             // 
-            this.tProjectProp.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Properties;
+           // this.tProjectProp.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Properties;
             this.tProjectProp.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tProjectProp.Name = "tProjectProp";
             this.tProjectProp.Size = new System.Drawing.Size(197, 22);
@@ -331,7 +331,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFileOpen
             // 
-            this.tFileOpen.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Open;
+            //this.tFileOpen.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Open;
             this.tFileOpen.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFileOpen.Name = "tFileOpen";
             this.tFileOpen.Size = new System.Drawing.Size(124, 22);
@@ -345,7 +345,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFileCut
             // 
-            this.tFileCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
+           // this.tFileCut.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Cut;
             this.tFileCut.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFileCut.Name = "tFileCut";
             this.tFileCut.Size = new System.Drawing.Size(124, 22);
@@ -354,7 +354,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFileCopy
             // 
-            this.tFileCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
+           // this.tFileCopy.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Copy;
             this.tFileCopy.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFileCopy.Name = "tFileCopy";
             this.tFileCopy.Size = new System.Drawing.Size(124, 22);
@@ -363,7 +363,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFilePaste
             // 
-            this.tFilePaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
+           // this.tFilePaste.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Paste;
             this.tFilePaste.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFilePaste.Name = "tFilePaste";
             this.tFilePaste.Size = new System.Drawing.Size(124, 22);
@@ -372,7 +372,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // tFileDelete
             // 
-            this.tFileDelete.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Delete;
+           // this.tFileDelete.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.Delete;
             this.tFileDelete.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tFileDelete.Name = "tFileDelete";
             this.tFileDelete.Size = new System.Drawing.Size(124, 22);
