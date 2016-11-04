@@ -51,10 +51,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.uikit", "NUNIT\nunit.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-gui", "NUNIT\nunit-gui\nunit-gui.csproj", "{9E15166C-D2B7-4B24-AB1C-1C69FFCEC9D3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{933AFECF-2B4F-4605-911A-DCF30553C251}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commandlets", "PowerShell\Commandlets\Commandlets.csproj", "{472EB8E4-C43F-4F54-B964-D3A34368DCD3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Formatters", "Formatters", "{71082E68-932A-4B46-BEE6-BF522CCCC959}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DotNet.CodeFormatting", "Formatters\Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj", "{D535641F-A2D7-481C-930D-96C02F052B95}"
